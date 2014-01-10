@@ -15,7 +15,7 @@ Todo.create([{
   due_date: Date.tomorrow,
   user: user
 }, {
-  title: 'The next plan',
+  title: 'The Next Plan',
   user: user
 }, {
   title: 'Shouldn\'t be seen by Tute',

@@ -1,45 +1,29 @@
 class TodosController < ApplicationController
   before_action :find_entry, only: [:show, :edit, :update, :destroy]
+  respond_to :html, :json
 
   def index
-    @todos = current_user.todos
+    @todos = current_user.todos.all
+    respond_with @todos
   end
 
   def new
-    @todo = current_user.todos.new
+    respond_with (@todo = current_user.todos.new)
   end
 
   def create
-    @todo = current_user.todos.new todo_params
-    respond_to do |format|
-      if @todo.save
-        format.html { redirect_to @todo, notice: 'To-do successfully created.' }
-        format.json { render action: 'show', status: :created, location: @todo }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @todo.errors, status: :unprocessable_entity }
-      end
-    end
+    @todo = current_user.todos.create todo_params
+    respond_with @todo, location: todos_path
   end
 
   def update
-    respond_to do |format|
-      if @todo.update(todo_params)
-        format.html { redirect_to @todo, notice: 'Todo was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @todo.errors, status: :unprocessable_entity }
-      end
-    end
+    @todo.update_attributes todo_params
+    respond_with @todo, location: todos_path
   end
 
   def destroy
     @todo.destroy
-    respond_to do |format|
-      format.html { redirect_to todos_url }
-      format.json { head :no_content }
-    end
+    respond_with @todo
   end
 
   private

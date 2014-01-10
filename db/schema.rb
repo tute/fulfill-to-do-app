@@ -15,9 +15,9 @@ ActiveRecord::Schema.define(version: 20140110145231) do
 
   create_table "todos", force: true do |t|
     t.string   "title"
-    t.boolean  "completed_at"
-    t.integer  "priority",     default: 1
+    t.date     "completed_at"
     t.date     "due_date"
+    t.integer  "priority",     default: 1
     t.integer  "order"
     t.integer  "user_id"
     t.datetime "created_at"

@@ -2,11 +2,8 @@
 
 ## To do:
 
-* I can manipulate my list (add/remove/modify entries).
 * I can sort my entry lists using due date and priority.
 * I can mark an entry as completed.
-* I need every client operation done using JavaScript, reloading the page is
-  not an option.
 * You need to be able to pass credentials to both the webpage and the API.
 
 ## Done:
@@ -17,6 +14,9 @@
 * Write a RESTful API which will allow a third-party application to trigger
   actions on your app (same actions available on the webpage).
 * I can create users in the system via an interface, probably a signup/register screen.
+* I can manipulate my list (add/remove/modify entries).
+* I need every client operation done using JavaScript, reloading the page is
+  not an option.
 
 
 ## Notes

@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background: #efe;
+}
+fieldset {
+  width: 50%;
+  margin: auto;
+}
+
+#todos {
+  width: 90%;
+  margin: auto;
+  padding: 1em;
+  background: #eef;
+}

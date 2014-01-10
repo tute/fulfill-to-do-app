@@ -1,37 +1,35 @@
-<%= form_for(@todo) do |f| %>
-  <% if @todo.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@todo.errors.count, "error") %> prohibited this todo from being saved:</h2>
+<%= form_for todo do |f| %>
+<fieldset>
+  <legend>Add/Edit To-Do Items</legend>
 
+  <% if todo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(todo.errors.count, "error") %> prohibited this todo from being saved:</h2>
       <ul>
-      <% @todo.errors.full_messages.each do |msg| %>
+      <% todo.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :completed_at %><br>
-    <%= f.check_box :completed_at %>
-  </div>
-  <div class="field">
-    <%= f.label :priority %><br>
-    <%= f.number_field :priority %>
-  </div>
-  <div class="field">
-    <%= f.label :due_date %><br>
-    <%= f.date_select :due_date %>
-  </div>
-  <div class="field">
-    <%= f.label :order %><br>
-    <%= f.number_field :order %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.label :title %>
+  <%= f.text_field :title %><br>
+
+  <%= f.label :completed_at %>
+  <%= f.text_field :completed_at %><br>
+
+  <%= f.label :due_date %>
+  <%= f.text_field :due_date, value: 1.week.from_now.to_date.to_s(:db) %><br>
+
+  <%= f.label :priority %>
+  <%= f.number_field :priority %><br>
+
+  <%= f.label :order %>
+  <%= f.number_field :order %><br>
+
+  <%= f.hidden_field :id %>
+  <%= f.submit %>
+
+</fieldset>
 <% end %>

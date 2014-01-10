@@ -12,4 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require underscore
+//= require backbone
+//= require todos/template
+//= require todos/model
+//= require todos/views
+//= require todos/form_views
+//= require todos/app
