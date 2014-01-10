@@ -1,0 +1,17 @@
+<p>Sort by: priority - due date.</p>
+
+<ul>
+  <% @todos.each do |todo| %>
+    <li>
+      <h3><%= todo.title %></h3>
+      <%= '<h4>completed!</h4>'.html_safe if todo.completed_at? %>
+      <%= "<h4>Due date: #{todo.due_date}</h4>".html_safe if todo.due_date %>
+      <%= link_to 'Edit', edit_todo_path(todo) %> -
+      <%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>
+  <% end %>
+</ul>
+
+<br>
+
+<%= link_to 'New Todo', new_todo_path %>
