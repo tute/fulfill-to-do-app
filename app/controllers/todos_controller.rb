@@ -35,6 +35,6 @@ class TodosController < ApplicationController
   def todo_params
     params[:todo] ||= {}
     params[:todo][:user_id] = current_user.id
-    params.require(:todo).permit(:title, :completed_at, :priority, :due_date, :order)
+    params.require(:todo).permit(:title, :completed_at, :priority, :due_date)
   end
 end

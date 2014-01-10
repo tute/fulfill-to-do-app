@@ -24,7 +24,6 @@ class window.TodoFormView extends Backbone.View
       completed_at: @.$('#todo_completed_at').val()
       due_date: @.$('#todo_due_date').val()
       priority: @.$('#todo_priority').val()
-      order:    @.$('#todo_order').val()
     hash['id'] = @.$('#todo_id').val() if @.$('#todo_id').val()
     hash
 
@@ -57,7 +56,6 @@ class window.EditTodoView extends TodoFormView
     @.$('#todo_completed_at').val @.model.get('completed_at')
     @.$('#todo_due_date').val @.model.get('due_date')
     @.$('#todo_priority').val @.model.get('priority')
-    @.$('#todo_order').val    @.model.get('order')
 
   markForEdit: ->
     @.$('form').removeClass 'create'

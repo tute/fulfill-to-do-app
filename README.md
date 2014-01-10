@@ -12,6 +12,10 @@
 * I can mark an entry as completed.
 * I can sort my entry lists using due_date and priority.
 
+## To-do
+
+* Doesn't keep events after sorting
+* Doesn't sort correctly after edit
 
 ## Notes
 

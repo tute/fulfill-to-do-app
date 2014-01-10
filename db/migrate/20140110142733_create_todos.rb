@@ -5,7 +5,6 @@ class CreateTodos < ActiveRecord::Migration
       t.date :completed_at
       t.date :due_date
       t.integer :priority, default: 1
-      t.integer :order
       t.integer :user_id
       t.timestamps
     end

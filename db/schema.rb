@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 20140110145231) do
     t.date     "completed_at"
     t.date     "due_date"
     t.integer  "priority",     default: 1
-    t.integer  "order"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
