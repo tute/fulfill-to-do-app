@@ -8,8 +8,6 @@
 * I need every client operation done using JavaScript, reloading the page is
   not an option.
 * You need to be able to pass credentials to both the webpage and the API.
-* As complementary to the last item, one should be able to create users in the
-  system via an interface, probably a signup/register screen.
 
 ## Done:
 
@@ -18,6 +16,7 @@
 * Minimal UI/UX design is needed.
 * Write a RESTful API which will allow a third-party application to trigger
   actions on your app (same actions available on the webpage).
+* I can create users in the system via an interface, probably a signup/register screen.
 
 
 ## Notes

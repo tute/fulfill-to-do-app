@@ -2,18 +2,18 @@ class TodosController < ApplicationController
   before_action :find_entry, only: [:show, :edit, :update, :destroy]
 
   def index
-    @todos = Todo.all
+    @todos = current_user.todos
   end
 
   def new
-    @todo = Todo.new
+    @todo = current_user.todos.new
   end
 
   def create
-    @todo = Todo.new todo_params
+    @todo = current_user.todos.new todo_params
     respond_to do |format|
       if @todo.save
-        format.html { redirect_to @todo, notice: 'Todo was successfully created.' }
+        format.html { redirect_to @todo, notice: 'To-do successfully created.' }
         format.json { render action: 'show', status: :created, location: @todo }
       else
         format.html { render action: 'new' }
@@ -45,10 +45,12 @@ class TodosController < ApplicationController
   private
 
   def find_entry
-    @todo = Todo.find params[:id]
+    @todo = current_user.todos.find params[:id]
   end
 
   def todo_params
+    params[:todo] ||= {}
+    params[:todo][:user_id] = current_user.id
     params.require(:todo).permit(:title, :completed_at, :priority, :due_date, :order)
   end
 end
