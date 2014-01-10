@@ -8,7 +8,7 @@ $(document).ready ->
     el: $('#todo_form')
     collection: window.TODOS
 
-  new TodosView
+  window.ListView = new TodosView
     el: $("#todos")
     collection: window.TODOS
 

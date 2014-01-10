@@ -1,6 +1,6 @@
 window.JST = {};
 window.JST['todos/todo'] = _.template(
-  '<div id="todo_id_<%= todo.id %>" class="todo_item">\
+  '<div id="todo_id_<%= todo.id %>" class="todo_item" data-id="<%= todo.id %>">\
     <h3>\
       <%= todo.get("title") %>\
       <a href="#" class="edit">[Edit]</a>\
@@ -11,7 +11,8 @@ window.JST['todos/todo'] = _.template(
     <% } else { %>\
       <a href="#" class="complete">[Mark Completed]</a>\
     <% } %><br>\
-    Due date: <%= todo.get("due_date") %>\
+    Due date: <%= todo.get("due_date") %><br>\
+    Priority: <%= todo.get("priority") %>\
     <hr>\
   </div>'
 )

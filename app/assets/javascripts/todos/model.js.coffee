@@ -5,3 +5,4 @@ class window.Todo extends Backbone.Model
 class window.Todos extends Backbone.Collection
   url: '/todos'
   model: Todo
+  comparator: 'priority'

@@ -1,11 +1,5 @@
 # Todo list management web application
 
-## To do:
-
-* I can sort my entry lists using due date and priority.
-
-## Done:
-
 * I can have my todo list displayed.
 * Assign priorities and due dates to the entries.
 * Minimal UI/UX design is needed.
@@ -16,6 +10,7 @@
 * I need every client operation done using JavaScript, reloading the page is
   not an option.
 * I can mark an entry as completed.
+* I can sort my entry lists using due_date and priority.
 
 
 ## Notes

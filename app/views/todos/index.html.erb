@@ -2,7 +2,9 @@
 
 <hr>
 
-<p>Sort by: priority - due date.</p>
+<p>Sort by:
+  <a href="javascript: ListView.doSort('priority')">priority</a> -
+  <a href="javascript: ListView.doSort('due_date')">due date</a>.</p>
 
 <div id="todo_form">
   <%= render 'form', todo: Todo.new %>
