@@ -49,14 +49,11 @@ class window.TodosView extends Backbone.View
 
   renderOne: (todo) ->
     view = new TodoView(model: todo)
-    $(@el).append view.render().el
+    @.$el.append view.render().el
     @
 
-  doSort: (attrName = 'priority') ->
+  sortByAndRender: (attrName = 'priority') ->
+    @.$el.html ''
     TODOS.comparator = attrName
-    ids = TODOS.sort().pluck('id')
-    $('.todo_item').sort((a, b) =>
-      idA = parseInt $(a).data('id')
-      idB = parseInt $(b).data('id')
-      ids.indexOf(idA) > ids.indexOf(idB)
-    ).appendTo @el
+    $.each TODOS.sort().models, (i, model) =>
+      @renderOne model

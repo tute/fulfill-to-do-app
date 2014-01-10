@@ -14,7 +14,6 @@
 
 ## To-do
 
-* Doesn't keep events after sorting
 * Doesn't sort correctly after edit
 
 ## Notes
