@@ -3,6 +3,7 @@ class window.TodoView extends Backbone.View
 
   events:
     'click .edit': 'showEditForm'
+    'click .complete': 'markCompleted'
     'click .delete': 'destroyModelAndView'
 
   initialize: ->
@@ -11,6 +12,9 @@ class window.TodoView extends Backbone.View
   render: ->
     @.$el.html @template('todo': @.model)
     @
+
+  markCompleted: ->
+    @.model.save completed_at: @sqlDate()
 
   showEditForm: ->
     EditTodoView.model = @.model
@@ -21,6 +25,20 @@ class window.TodoView extends Backbone.View
     @model.destroy()
     @.$el.fadeOut 'fast', ->
       @.remove()
+
+      window.JST = {}
+
+  # Returns date today in YYYY-MM-DD format
+  sqlDate: (date = new Date()) ->
+    mon = @_alwaysTwoChars date.getMonth() + 1
+    day = @_alwaysTwoChars date.getDate()
+    "#{date.getFullYear()}-#{mon}-#{day}"
+
+  # Takes a number, if it's 1-digit it inserts a leading zero it
+  _alwaysTwoChars: (number) ->
+    ret = new String(number)
+    ret = "0#{ret}"  if ret.length is 1
+    ret
 
 
 class window.TodosView extends Backbone.View

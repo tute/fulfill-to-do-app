@@ -3,8 +3,6 @@
 ## To do:
 
 * I can sort my entry lists using due date and priority.
-* I can mark an entry as completed.
-* You need to be able to pass credentials to both the webpage and the API.
 
 ## Done:
 
@@ -17,8 +15,10 @@
 * I can manipulate my list (add/remove/modify entries).
 * I need every client operation done using JavaScript, reloading the page is
   not an option.
+* I can mark an entry as completed.
 
 
 ## Notes
 
-* See https://gist.github.com/josevalim/fb706b1e933ef01e4fb6 for token (API) authentication
+* You need to be able to pass credentials to both the webpage and the API.
+  Could solve it with: https://gist.github.com/josevalim/fb706b1e933ef01e4fb6

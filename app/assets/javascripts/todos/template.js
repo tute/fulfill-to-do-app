@@ -6,7 +6,11 @@ window.JST['todos/todo'] = _.template(
       <a href="#" class="edit">[Edit]</a>\
       <a href="#" class="delete">[Delete]</a>\
     </h3>\
-    Completed: <%= todo.get("completed_at") %><br>\
+    <% if (todo.get("completed_at")) { %>\
+      Completed: <%= todo.get("completed_at") %>\
+    <% } else { %>\
+      <a href="#" class="complete">[Mark Completed]</a>\
+    <% } %><br>\
     Due date: <%= todo.get("due_date") %>\
     <hr>\
   </div>'
