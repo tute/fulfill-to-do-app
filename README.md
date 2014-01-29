@@ -1,4 +1,8 @@
-# Todo list management web application
+# Fulfill - Todo list management web application
+
+Sample app I built in a day as part of an interview. Rails 4.1.0.beta1, devise, Backbone v1.1.0.
+
+## Done
 
 * I can have my todo list displayed.
 * Assign priorities and due dates to the entries.
@@ -13,7 +17,7 @@
 * I can sort my entry lists using due_date and priority.
 
 
-## Notes
+## To-do
 
 * You need to be able to pass credentials to both the webpage and the API.
   Could solve it with: https://gist.github.com/josevalim/fb706b1e933ef01e4fb6
